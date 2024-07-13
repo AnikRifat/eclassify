@@ -1,0 +1,149 @@
+body {
+    background-color: #fff
+}
+
+.login_bg {
+    height: 100vh;
+    overflow-x: hidden;
+    /*background: url(../../images/bg/Login_BG.jpg);*/
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    background-repeat: no-repeat;
+}
+
+.login_bg::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+#auth .card {
+    border-radius: 0;
+    /*margin-bottom: 0;*/
+}
+
+#auth #auth-box {
+    padding: 40px 30px;
+    height: auto;
+    width: 31%;
+}
+
+#auth #auth-right {
+    background: url(../../../assets/images/4853433.png?45649b87e0b3f50bfa1372c6cdb4595f), linear-gradient(90deg, #FFFF, #FFFF);
+    height: 100%
+}
+
+#auth #auth-left {
+    padding: 5rem 8rem
+}
+
+#auth #auth-left .auth-title {
+    font-size: 4rem;
+    margin-bottom: 1rem
+}
+
+#auth #auth-left .auth-subtitle {
+    color: #a8aebb;
+    font-size: 1.7rem;
+    line-height: 2.5rem
+}
+
+/* #auth #auth-left .auth-logo {
+    margin-bottom: 7rem
+}
+
+#auth #auth-left .auth-logo img {
+    height: 2rem
+} */
+
+#auth .auth-logo {
+    position: relative;
+    top: 20px;
+    text-align: center;
+}
+
+#auth .form-input {
+    background-color: #F9F9F9;
+}
+
+#auth .login_btn {
+    height: 56px;
+    display: inline-block;
+    width: 100%;
+    padding: 16px 8px
+}
+
+#auth .login_btn:hover {
+    background-color: #212121;
+}
+
+#auth #auth-box .auth-logo img {
+    width: 240px;
+    object-fit: contain;
+}
+
+
+#auth .login_heading {
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.mtop-120 {
+    margin-top: 120px;
+}
+
+.login-box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    right: 6%;
+}
+
+.login-border {
+    border: 2px solid #e9ecef
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    #auth #auth-left {
+        padding: 5rem 3rem
+    }
+
+    #auth #auth-box {
+        width: 90%;
+        margin: 18px;
+    }
+
+    .login-box {
+        right: 0;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    #auth #auth-left {
+        padding: 5rem
+    }
+
+    .login-box {
+        right: 0;
+    }
+
+    #auth-box {
+        margin: 60px;
+        width: 80% !important;
+    }
+}
+
+/*320px—480px: Mobile devices*/
+/*481px—768px: iPads, Tablets*/
+/*769px—1024px: Small screens, laptops*/
+/*1025px—1200px: Desktops, large screens*/
+/*1201px and more — Extra large screens, TV*/
