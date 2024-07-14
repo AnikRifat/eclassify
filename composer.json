@@ -14,6 +14,7 @@
         "ext-zip": "*",
         "cerbero/json-parser": "^1.1",
         "dacoto/laravel-wizard-installer": "^1.0",
+        "dedoc/scramble": "^0.11.4",
         "doctrine/dbal": "^3.6",
         "google/apiclient": "^2.16",
         "guzzlehttp/guzzle": "^7.2",

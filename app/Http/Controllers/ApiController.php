@@ -96,10 +96,16 @@ class ApiController extends Controller {
         try {
             $validator = Validator::make($request->all(), [
                 'type'         => 'required|in:email,google,phone,apple',
+                'email'         => 'sometimes',
                 'firebase_id'  => 'required',
                 'country_code' => 'nullable|string',
             ]);
-
+$data = [
+    'type' => $request['type'],
+    'email' => $request['email'],
+    'firebase_id' => $request['firebase_id'],
+    'country_code' => $request['country_code'],
+];
             if ($validator->fails()) {
                 ResponseService::validationError($validator->errors()->first());
             }
@@ -121,7 +127,7 @@ class ApiController extends Controller {
                     $unique['email'] = $request->email;
                 }
                 $user = User::updateOrCreate([...$unique], [
-                    ...$request->all(),
+                    $data,
                     'profile' => $request->hasFile('profile') ? $request->file('profile')->store('user_profile', 'public') : $request->profile,
                 ]);
                 SocialLogin::updateOrCreate([
