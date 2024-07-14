@@ -796,7 +796,7 @@ $data = [
     public function getParentCategoryTree(Request $request) {
         $validator = Validator::make($request->all(), [
             'child_category_id'=>'required|integer',
-            'tree'=>'nullable|boolean'
+            'tree'=>'nullable'
         ]);
 
         if ($validator->fails()) {
@@ -1185,7 +1185,7 @@ $data = [
 
     public function getPaymentTransactions(Request $request) {
         $validator = Validator::make($request->all(), [
-            'latest_only' => 'nullable|boolean'
+            'latest_only' => 'nullable'
         ]);
 
         if ($validator->fails()) {
