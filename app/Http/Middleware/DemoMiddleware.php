@@ -18,12 +18,12 @@ class DemoMiddleware {
      * @return RedirectResponse|JsonResponse
      */
     public function handle(Request $request, Closure $next) {
-        // $exclude_uri = array(
-        //     '/user-signup',
-        //     '/api/user-signup',
-        //     '/logout',
-        //     '/api/manage-favourite'
-        // );
+        $exclude_uri = array(
+            '/user-signup',
+            '/api/user-signup',
+            '/logout',
+            '/api/manage-favourite'
+        );
 
         // This URI will be accessible in Demo mode , regardless of any user
         $includeUri = array(
