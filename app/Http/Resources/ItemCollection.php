@@ -26,9 +26,9 @@ class ItemCollection extends ResourceCollection {
                 /* NOTE : This code can be improved */
                 $response[$key] = $collection->toArray();
                 if ($collection->status == "approved" && $collection->relationLoaded('featured_items')) {
-                    $response[$key]['is_feature'] = count($collection->featured_items) > 0;
+                    $response[$key]['is_feature'] = count($collection->featured_items) > 0?true:false;
                 }else{
-                    $response[$key]['is_feature'] = 0;
+                    $response[$key]['is_feature'] = false;
                 }
 
 
@@ -106,7 +106,6 @@ class ItemCollection extends ResourceCollection {
 
             // Merge the featured rows first and then the normal rows
             $response = array_merge($featuredRows, $normalRows);
-
             if ($this->resource instanceof AbstractPaginator) {
                 //If the resource has a paginated collection then we need to copy the pagination related params and actual item details data will be copied to data params
                 return [
