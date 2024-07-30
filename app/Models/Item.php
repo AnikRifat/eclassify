@@ -37,6 +37,7 @@ class Item extends Model {
 
     protected $casts = [
         'show_only_to_premium' => 'bool',
+        'active' => 'bool',
     ];
     
     // Relationships
