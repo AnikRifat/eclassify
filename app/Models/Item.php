@@ -35,6 +35,10 @@ class Item extends Model {
         'slug'
     ];
 
+    protected $casts = [
+        'show_only_to_premium' => 'bool',
+    ];
+    
     // Relationships
     public function user() {
         return $this->belongsTo(User::class);
